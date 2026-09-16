@@ -1,0 +1,11 @@
+{
+  "name": "florencia-barrera-workspace",
+  "private": true,
+  "scripts": {
+    "build:css": "npx @tailwindcss/cli -i ./src/input.css -o ./css/tailwind.min.css --minify"
+  },
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.1.13",
+    "tailwindcss": "^4.1.13"
+  }
+}
