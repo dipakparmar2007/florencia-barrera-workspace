@@ -51,5 +51,5 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
           git add css/tailwind.min.css
-          git commit -m "build: update Tailwind CSS"
+          git commit -m "build: update Tailwind CSS ($(date -u '+%I:%M %p, %A, %d %B %Y - Coordinated Universal Time (UTC)'))"
           git push
