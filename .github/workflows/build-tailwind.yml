@@ -1,0 +1,57 @@
+name: Build Tailwind CSS
+
+on:
+  push:
+    branches:
+      - main
+
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Verify Tailwind CLI
+        run: npx tailwindcss --help
+
+      - name: Build Tailwind CSS
+        run: npm run build:css
+
+      - name: Check generated CSS
+        run: |
+          if [ ! -f assets/css/tailwind.min.css ]; then
+            echo "ERROR: Tailwind CSS was not generated."
+            exit 1
+          fi
+
+          echo "Tailwind CSS generated successfully."
+          ls -lh assets/css/tailwind.min.css
+
+      - name: Commit generated CSS
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add assets/css/tailwind.min.css
+
+          if git diff --cached --quiet; then
+            echo "No CSS changes to commit."
+          else
+            git commit -m "build: update Tailwind CSS"
+            git push
+          fi
