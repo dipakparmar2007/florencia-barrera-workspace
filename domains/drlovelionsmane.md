@@ -1,6 +1,6 @@
 # Dr. Love Lion's Mane
 
-**Domain:** https://drlovelionsmane.com
+**Domain:** https://dipakparmar2007.github.io/florencia-barrera-workspace/sites/drlovelionsmane/
 
 **Total public pages:** 1
 
@@ -13,7 +13,7 @@
 
 | # | Page | File | Public URL |
 |---:|---|---|---|
-| 1 | Home | `index.html` | <https://drlovelionsmane.com/> |
+| 1 | Home | `index.html` | <https://dipakparmar2007.github.io/florencia-barrera-workspace/sites/drlovelionsmane//> |
 
 </details>
 
@@ -23,4 +23,4 @@
 
 | # | Page | File | Public URL |
 |---:|---|---|---|
-| 1 | Home | `index.html` | <https://drlovelionsmane.com/> |
+| 1 | Home | `index.html` | <https://dipakparmar2007.github.io/florencia-barrera-workspace/sites/drlovelionsmane//> |
