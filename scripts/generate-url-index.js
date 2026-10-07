@@ -45,22 +45,22 @@ const README_FILE = path.join(ROOT_DIR, "README.md");
 const DOMAINS = [
   {
     directory: "drloveofficial",
-    domain: "https://drloveofficial.com",
+    domain: "https://dipakparmar2007.github.io/florencia-barrera-workspace/sites/drloveofficial/",
     name: "Dr. Love Official",
   },
   {
     directory: "robertlove",
-    domain: "https://robertlove.net",
+    domain: "https://dipakparmar2007.github.io/florencia-barrera-workspace/sites/robertlove/",
     name: "Robert Love",
   },
   {
     directory: "roarlionsmane",
-    domain: "https://roarlionsmane.net",
+    domain: "https://dipakparmar2007.github.io/florencia-barrera-workspace/sites/roarlionsmane/",
     name: "Roar Lion's Mane",
   },
   {
     directory: "drlovelionsmane",
-    domain: "https://drlovelionsmane.com",
+    domain: "https://dipakparmar2007.github.io/florencia-barrera-workspace/sites/drlovelionsmane/",
     name: "Dr. Love Lion's Mane",
   },
 ];
