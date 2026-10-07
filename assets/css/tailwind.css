@@ -1,0 +1,53 @@
+@import "tailwindcss";
+
+@theme {
+    --font-sans: Inter, system-ui, -apple-system, Roboto, sans-serif;
+
+    --color-brand-green-light: #F2F8F5;
+    --color-brand-green-dark: #48815a;
+    --color-brand-green-trans: #48815a38;
+    --color-brand-green-accent: #339763;
+    --color-brand-navy: #2c2645;
+    --color-brand-orange-text: #FFAE2F;
+    --color-brand-guarantee-badge: #F1F1F6;
+    --color-brand-green-header: #48815A;
+    --color-brand-green-circle: #e2f5ec;
+    --color-brand-dark: #212121;
+    --color-brand-red-strike: #d92727;
+
+    --background-image-cta-btn: linear-gradient(
+        90deg,
+        #F48623 -8%,
+        #FFA429 81.3%
+    );
+
+    --background-image-cta-gradient: linear-gradient(
+        180deg,
+        #f89d35 0%,
+        #f37720 100%
+    );
+
+    --background-image-badge-gradient: linear-gradient(
+        135deg,
+        #f43f5e 0%,
+        #be123c 100%
+    );
+
+    --background-image-best-value-header: linear-gradient(
+        99deg,
+        #48815A 0.08%,
+        #26B654 100%
+    );
+
+    --shadow-cta: 0px 2.345px 4.691px rgba(0, 0, 0, 0.16);
+
+    --shadow-best-value:
+        0 10px 25px -5px rgba(0, 0, 0, 0.2),
+        0 8px 10px -6px rgba(0, 0, 0, 0.1);
+}
+
+@layer base {
+    html {
+        font-size: 20px;
+    }
+}

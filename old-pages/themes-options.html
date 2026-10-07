@@ -1,0 +1,1266 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Moringa B1G3 - A - V1</title>
+    <meta name="description" content="Buy 1 Bottle of Dr. Love's 100% Pure Organic Moringa and get 3 free. Support healthy cholesterol, blood sugar, brain function and energy naturally. 180-day money back guarantee." />
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link id="dynamic-font-link" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+    
+    <script>
+        // Dynamically generate font sizes: { '18px': '18px', '20px': '20px', ... '62px': '62px' }
+        const customFontSizes = {};
+        for (let size = 18; size <= 100; size += 2) {
+            customFontSizes[`${size}px`] = `${size}px`;
+        }
+        
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontSize: customFontSizes,
+                    fontFamily: {
+                        sans: ['var(--app-font, Inter)', 'system-ui', '-apple-system', 'Roboto', 'sans-serif'],
+                    },
+                    colors: {
+                        'brand-green-light': 'var(--brand-bg-light, #F2F8F5)',
+                        'brand-green-dark': 'var(--brand-primary, #48815a)',
+                        'brand-green-trans': 'var(--brand-trans, #48815a38)',
+                        'brand-green-accent': 'var(--brand-accent, #339763)',
+                        'brand-navy': 'var(--brand-text-navy, #2c2645)',
+                        'brand-orange-text': '#FFAE2F',
+                        'brand-guarantee-badge': 'var(--brand-badge-bg, #F1F1F6)',
+
+                        'brand-green-header': 'var(--brand-primary, #48815A)',
+                        'brand-green-circle': '#e2f5ec',
+                        'brand-dark': '#212121',
+                        'brand-red-strike': '#d92727',
+                    },
+                    backgroundImage: {
+                        'cta-btn': 'linear-gradient(90deg, #F48623 -8%, #FFA429 81.3%)',
+                        'cta-gradient': 'linear-gradient(180deg, #f89d35 0%, #f37720 100%)',
+                        'badge-gradient': 'linear-gradient(135deg, #f43f5e 0%, #be123c 100%)',
+                        'best-value-header': 'linear-gradient(99deg, #48815A 0.08%, #26B654 100%)',
+                    },
+                    boxShadow: {
+                        'cta': '0px 2.345px 4.691px rgba(0, 0, 0, 0.16)',
+                        'best-value': '0 10px 25px -5px rgba(0, 0, 0, 0.2), 0 8px 10px -6px rgba(0, 0, 0, 0.1)',
+                    }
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer base {
+            html {
+                font-size: 20px;
+            }
+        }
+    </style>
+    <style>
+        :root {
+            --app-font: 'Inter';
+            --brand-primary: #48815a;
+            --brand-accent: #339763;
+            --brand-bg-light: #F2F8F5;
+            --brand-trans: #48815a38;
+            --brand-text-navy: #2c2645;
+            --brand-badge-bg: #F1F1F6;
+        }
+
+        /* Dark mode custom variable overrides */
+        .dark {
+            --brand-bg-light: #18221c;
+            --brand-trans: #ffffff15;
+            --brand-text-navy: #e2e8f0;
+            --brand-badge-bg: #1e293b;
+        }
+
+        body {
+            font-family: var(--app-font), sans-serif !important;
+        }
+
+        /* Glassmorphism panel styling */
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        .dark .glass-panel {
+            background: rgba(15, 23, 42, 0.9);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+    </style>
+</head>
+<body class="font-sans text-black dark:text-white bg-white dark:bg-gray-950 antialiased transition-colors duration-300">
+
+<!-- ========================================== -->
+<!-- SETTINGS FLOATING TRIGGER & DRAWER PANEL -->
+<!-- ========================================== -->
+
+<!-- Floating Settings Icon Button (Positioned at top: 50%, right: 0) -->
+<button 
+    id="customizer-open-btn" 
+    aria-label="Open Display Settings" 
+    class="fixed top-1/2 right-0 -translate-y-1/2 z-50 bg-brand-green-dark text-white p-3 rounded-l-2xl shadow-2xl hover:bg-brand-green-accent focus:outline-none transition-all flex items-center justify-center border border-r-0 border-white/20">
+    <i class="bi bi-gear-fill text-2xl animate-spin-slow"></i>
+</button>
+
+<!-- Backdrop Overlay -->
+<div id="customizer-backdrop" class="fixed inset-0 bg-black/40 backdrop-blur-xs z-50 hidden transition-opacity duration-300"></div>
+
+<!-- Customization Drawer Panel -->
+<aside 
+    id="customizer-drawer" 
+    class="fixed top-0 right-0 h-full w-80 max-w-[90vw] z-50 glass-panel shadow-2xl transform translate-x-full transition-transform duration-300 flex flex-col justify-between overflow-y-auto">
+    
+    <div>
+        <!-- Drawer Header -->
+        <div class="flex items-center justify-between p-4 border-b border-gray-200 dark:border-gray-800">
+            <div class="flex items-center gap-2">
+                <i class="bi bi-palette-fill text-brand-green-dark dark:text-brand-green-accent text-xl"></i>
+                <h3 class="font-bold text-gray-900 dark:text-white text-lg">Theme & Styles</h3>
+            </div>
+            <button id="customizer-close-btn" class="text-gray-500 hover:text-gray-800 dark:hover:text-white text-2xl font-bold">
+                <i class="bi bi-x-lg text-lg"></i>
+            </button>
+        </div>
+
+        <div class="p-5 space-y-6">
+            
+            <!-- 1. Light / Dark Mode Toggle -->
+            <div>
+                <label class="block text-xs font-bold uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-2">
+                    Appearance Mode
+                </label>
+                <div class="grid grid-cols-2 gap-2 p-1 bg-gray-100 dark:bg-gray-800 rounded-xl">
+                    <button id="mode-light-btn" class="flex items-center justify-center gap-2 py-2 px-3 rounded-lg font-medium text-sm transition-all bg-white dark:bg-transparent text-gray-900 dark:text-gray-300 shadow-sm dark:shadow-none">
+                        <i class="bi bi-sun-fill text-amber-500"></i> Light
+                    </button>
+                    <button id="mode-dark-btn" class="flex items-center justify-center gap-2 py-2 px-3 rounded-lg font-medium text-sm transition-all text-gray-600 dark:text-white dark:bg-gray-700">
+                        <i class="bi bi-moon-stars-fill text-indigo-400"></i> Dark
+                    </button>
+                </div>
+            </div>
+
+            <!-- 2. Font Selector -->
+            <div>
+                <label for="font-select" class="block text-xs font-bold uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-2">
+                    Typography Font
+                </label>
+                <select id="font-select" class="w-full bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-xl py-2.5 px-3 text-sm text-gray-900 dark:text-white font-medium focus:outline-none focus:ring-2 focus:ring-brand-green-accent">
+                    <option value="Inter">Inter (Default)</option>
+                    <option value="Roboto">Roboto</option>
+                    <option value="Poppins">Poppins</option>
+                    <option value="Montserrat">Montserrat</option>
+                    <option value="Open Sans">Open Sans</option>
+                    <option value="Lato">Lato</option>
+                    <option value="Playfair Display">Playfair Display</option>
+                    <option value="Fira Code">Fira Code</option>
+                    <option value="Outfit">Outfit</option>
+                    <option value="Plus Jakarta Sans">Plus Jakarta Sans</option>
+                </select>
+            </div>
+
+            <!-- 3. Color Theme Selector -->
+            <div>
+                <label class="block text-xs font-bold uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-2">
+                    Accent Color Theme
+                </label>
+                <div class="grid grid-cols-5 gap-2">
+                    <!-- Emerald / Natural Green -->
+                    <button data-theme="emerald" title="Emerald Green" class="theme-color-btn h-10 rounded-xl bg-[#48815a] border-2 border-white dark:border-gray-800 shadow-md flex items-center justify-center text-white">
+                        <i class="bi bi-check-lg hidden"></i>
+                    </button>
+                    <!-- Ocean Blue -->
+                    <button data-theme="ocean" title="Ocean Blue" class="theme-color-btn h-10 rounded-xl bg-[#2563eb] border-2 border-transparent shadow-md flex items-center justify-center text-white">
+                        <i class="bi bi-check-lg hidden"></i>
+                    </button>
+                    <!-- Purple Cyber -->
+                    <button data-theme="purple" title="Purple Cyber" class="theme-color-btn h-10 rounded-xl bg-[#7c3aed] border-2 border-transparent shadow-md flex items-center justify-center text-white">
+                        <i class="bi bi-check-lg hidden"></i>
+                    </button>
+                    <!-- Sunset Gold -->
+                    <button data-theme="sunset" title="Sunset Gold" class="theme-color-btn h-10 rounded-xl bg-[#d97706] border-2 border-transparent shadow-md flex items-center justify-center text-white">
+                        <i class="bi bi-check-lg hidden"></i>
+                    </button>
+                    <!-- Rose Pink -->
+                    <button data-theme="rose" title="Rose Pink" class="theme-color-btn h-10 rounded-xl bg-[#e11d48] border-2 border-transparent shadow-md flex items-center justify-center text-white">
+                        <i class="bi bi-check-lg hidden"></i>
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Reset Footer -->
+    <div class="p-4 border-t border-gray-200 dark:border-gray-800">
+        <button id="reset-settings-btn" class="w-full text-center text-xs font-semibold text-gray-500 hover:text-red-500 dark:text-gray-400 dark:hover:text-red-400 py-2 transition-colors">
+            Reset to Defaults
+        </button>
+    </div>
+</aside>
+
+
+<!-- Announcement Bar -->
+<section class="bg-brand-green-accent" id="announcement-bar">
+    <div class="max-w-7xl mx-auto px-4 text-white text-center py-2 text-[15px] font-medium">
+        Our warehouse is working around the clock to keep up with the demand!
+    </div>
+</section> 
+        
+<!-- Header / Navigation -->
+<header class="bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-800 py-3 transition-colors">
+    <div class="w-full md:max-w-[1140px] mx-auto px-2 md:px-4 flex flex-wrap items-center justify-between">
+        
+        <!-- 1. Logo (Order 1) -->
+        <a class="font-bold text-2xl order-1" href="https://drlovelionsmane.com/">
+            <img class="w-[154px] md:w-[154px]" src="https://drlovelionsmane.com/assets/img/newLogo.png" alt="Logo" />
+        </a>
+
+        <!-- Flex wrapper for right-hand actions (Mobile: Checkout Button + Menu Button) -->
+        <div class="flex items-center gap-2 md:gap-4 order-2 lg:order-3">
+            
+            <!-- 2. Checkout Button (Order 2 on Mobile) -->
+            <a href="#offer" class="md:inline-flex bg-cta-btn border-2 border-[#FFB53D] shadow-cta text-white uppercase font-semibold py-1 px-2 md:py-1 md:px-2 rounded-lg items-center justify-center gap-1.5 text-xs md:text-base hover:brightness-105 transition-all open-modal-btn" data-target="#b2g6-modal">
+                <i class="bi bi-cart3 px-1"></i> <span>Buy Now</span> <i class="bi bi-chevron-right sm:inline"></i>
+            </a>
+
+            <!-- 3. Navigation Icon (Order 3 on Mobile) -->           
+            <button 
+              onclick="document.getElementById('mobile-menu').classList.toggle('hidden'); document.getElementById('icon-open').classList.toggle('hidden'); document.getElementById('icon-close').classList.toggle('hidden')" 
+              type="button" 
+              class="lg:hidden text-brand-green-dark" 
+              aria-label="Toggle navigation">
+              
+              <!-- Hamburger Icon (Default) -->
+              <i id="icon-open" class="bi bi-list text-2xl"></i>
+              
+              <!-- Close Icon (Hidden by default) -->
+              <i id="icon-close" class="bi bi-x-lg text-2xl hidden"></i>
+            </button>
+            
+        </div>
+
+        <!-- Mobile Menu (Full Width Break Dropdown) -->
+        <nav id="mobile-menu" class="hidden w-full order-3 lg:order-2 lg:flex lg:w-auto lg:items-center lg:gap-8 mt-4 lg:mt-0 border-t border-gray-100 dark:border-gray-800 pt-3 lg:pt-0 lg:border-t-0">
+            <ul class="flex flex-col lg:flex-row gap-3 lg:gap-8 text-black dark:text-gray-200 font-medium text-base mb-2 lg:mb-0">
+                <li><a class="hover:text-brand-green-dark transition-colors text-[15px] block py-1" href="#benefits">Benefits</a></li>
+                <li><a class="hover:text-brand-green-dark transition-colors text-[15px] block py-1" href="#details">Details</a></li>
+                <li><a class="hover:text-brand-green-dark transition-colors text-[15px] block py-1" href="#why-us">Why Buy From Us</a></li>
+            </ul>
+        </nav>
+
+    </div>
+</header>
+        
+<main>
+    
+    <!-- Hero Section -->
+    <section class="overflow-hidden bg-brand-green-light py-5 pb-12 mb-0 lg:mb-12 px-4 transition-colors" id="hero">
+        <div class="w-full md:max-w-[1140px] mx-auto">
+            
+            <!-- Video Player Container -->
+            <div class="flex justify-center mb-12 mt-6">
+                <div class="w-full max-w-[338px] rounded-2xl overflow-hidden shadow-lg">
+                    <script src="https://fast.wistia.com/player.js" async></script>
+                    <script src="https://fast.wistia.com/embed/xamd1wn4df.js" async type="module"></script>
+                    <style>
+                        wistia-player[media-id='xamd1wn4df']:not(:defined) { 
+                            background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/xamd1wn4df/swatch'); 
+                            display: block; 
+                            filter: blur(5px); 
+                            padding-top:177.78%; 
+                        }
+                    </style> 
+                    <wistia-player media-id="xamd1wn4df" aspect="0.5625" style="width: 338px; height: 600px;"></wistia-player>             
+                </div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-0 sm:gap-0 md:gap-4 lg:gap-4 xl:gap-1 items-center">
+                <!-- Image Column (4 of 12) -->
+                <div class="order-1 md:order-1 col-span-12 md:col-span-4 text-center flex justify-center md:justify-start mb-6 md:mb-0">
+                    <img src="https://drlovelionsmane.com/assets/img/st/moringa/moringa-bottle-two-up.png" alt="Two bottles of Dr. Love Organic Moringa capsules" class="max-w-full h-auto" width="400" height="350" loading="lazy" />
+                </div>
+
+                <!-- Content Column (8 of 12) -->
+                <div class="order-2 md:order-2 col-span-12 md:col-span-8 text-center md:text-left">
+                    <h1 class="text-3xl md:text-4xl font-bold bg-brand-green-dark text-white p-2 inline-block rounded mb-4">
+                        Deal of the Day:
+                    </h1>
+                    <h2 class="text-3xl md:text-4xl font-bold leading-tight mb-4 text-gray-900 dark:text-white">
+                        Buy 1 Bottle and Get 3 Bottles for Free!
+                    </h2>
+                    <p class="mb-6 text-black dark:text-gray-300">
+                        Experience Energy and Strengthen your Immune System Naturally With One Of Nature's Most Popular Superfoods.
+                    </p>
+                    <a href="#offer" class="bg-cta-btn border-2 border-[#FFB53D] shadow-cta text-white uppercase font-semibold py-2 px-6 rounded-lg inline-flex items-center justify-center gap-2 hover:brightness-105 transition-all open-modal-btn" data-target="#b2g6-modal">
+                        <i class="bi bi-cart3"></i> Buy Now <i class="bi bi-chevron-right"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Trust Badges Bar -->
+            <div class="mt-12 bg-white/50 dark:bg-gray-800/50 p-6 rounded-xl border border-white/20 dark:border-gray-700/30">
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 items-start text-left sm:items-center sm:text-center">
+                    
+                    <!-- Cruelty Free -->
+                    <div class="flex items-center justify-start sm:justify-center gap-3 sm:mx-auto">
+                        <img src="https://drlovelionsmane.com/ecom/assetsMoringa/images/index-animal-cruelty.png" alt="Cruelty Free" class="h-12 w-auto" />
+                        <div class="uppercase font-medium text-left w-full sm:max-w-[100px] leading-tight text-black dark:text-white">cruelty free</div>
+                    </div>
+                    
+                    <!-- GMO Free -->
+                    <div class="flex items-center justify-start sm:justify-center gap-3 sm:mx-auto">
+                        <img src="https://drlovelionsmane.com/ecom/assetsMoringa/images/index-vegan.png" alt="GMO Free" class="h-12 w-auto" />
+                        <div class="uppercase font-medium text-left w-full sm:max-w-[100px] leading-tight text-black dark:text-white">gmo free</div>
+                    </div>
+                    
+                    <!-- Made in the USA -->
+                    <div class="flex items-center justify-start sm:justify-center gap-3 sm:mx-auto">
+                        <img src="https://drlovelionsmane.com/ecom/assetsMoringa/images/index-badge.png" alt="Made in the USA" class="h-12 w-auto" />
+                        <div class="uppercase font-medium text-left w-full sm:max-w-[100px] leading-tight text-black dark:text-white">made in the usa</div>
+                    </div>
+                    
+                    <!-- Third Party Tested -->
+                    <div class="flex items-center justify-start sm:justify-center gap-3 sm:mx-auto">
+                        <img src="https://drlovelionsmane.com/ecom/assetsMoringa/images/index-third-party1.png" alt="Third Party Tested" class="h-12 w-auto" />
+                        <div class="uppercase font-medium text-left w-full sm:max-w-[100px] leading-tight text-black dark:text-white">third party tested</div>
+                    </div>
+                    
+                </div>
+            </div>
+            
+        </div>
+    </section>
+    
+    <!-- Benefits Section -->
+    <section class="overflow-hidden relative py-4 my-4 md:py-5 md:my-5 px-4" id="benefits">
+        
+        <div class="hidden xl:flex absolute inset-0 opacity-30 bg-no-repeat bg-[url('https://drlovelionsmane.com/assets/img/mushroom.svg')] bg-[position:10px_0px] 2xl:bg-[position:50px_140px] bg-[length:13%_auto]"></div>
+
+        <div class="w-full md:max-w-[1140px] mx-auto">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+                <div>
+                    <p class="text-brand-green-dark font-bold mb-2">100% PURE MORINGA</p>
+                    <h2 class="text-3xl lg:text-4xl font-bold text-brand-navy dark:text-white mb-4 leading-tight">
+                        What used to be too good to be true is now possible with 100% Pure Moringa.
+                    </h2>
+                    <p class="text-brand-green-dark font-semibold mb-4">Used and trusted by over 17,000 people.</p>
+                    <p class="text-black dark:text-gray-300">Take advantage of this special offer to get the best antioxidant protection for your body at an amazing price!</p>
+                </div>
+                <div>
+                    <div class="bg-brand-green-light p-8 md:p-8 rounded-xl transition-colors">
+                        <h3 class="font-bold mb-6 text-brand-green-dark text-center text-3xl md:text-4xl">Benefits</h3>
+                        
+                        <div class="flex flex-col sm:flex-row gap-4 mb-6 items-center text-center sm:text-left">
+                            <span class="text-brand-green-dark text-4xl flex-shrink-0"><i class="bi bi-heart-pulse"></i></span>
+                            <p class="text-black dark:text-gray-300">
+                                Supports healthy Cholesterol &amp; Blood sugar levels, allowing you to have a good night's rest <strong>WITHOUT the stress.</strong>
+                            </p>
+                        </div>
+                        
+                        <div class="flex flex-col sm:flex-row gap-4 mb-6 items-center text-center sm:text-left">
+                            <span class="text-brand-green-dark text-4xl flex-shrink-0"><i class="bi bi-cpu"></i></span>
+                            <p class="text-black dark:text-gray-300">
+                                Boosts your Memory while eliminating Brain Fog, so you can be <strong>FOCUSED</strong> and <strong>PRESENT</strong> during your day, every day.
+                            </p>
+                        </div>
+                        
+                        <div class="flex flex-col sm:flex-row gap-4 items-center text-center sm:text-left">
+                            <span class="text-brand-green-dark text-4xl flex-shrink-0"><i class="bi bi-droplet"></i></span>
+                            <p class="text-black dark:text-gray-300">
+                                Gives Your Digestive System a Detox leaving you feeling <strong>FRESHER</strong> than ever, inside and out.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Doctor Section -->
+    <section class="overflow-hidden py-2 my-2 md:py-5 md:my-5 px-4" id="why-us">
+        <div class="w-full md:max-w-[1140px] mx-auto">
+            <!-- Main Wrapper Container -->
+            <div class="bg-brand-green-light p-2 md:p-8 rounded-xl transition-colors">
+                
+                <!-- Top White Card -->
+                <div class="bg-white dark:bg-gray-900 p-4 md:p-8 rounded-2xl shadow-sm border border-transparent dark:border-gray-800 transition-colors">
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-2 items-start">
+                        
+                        <!-- Left Content Area -->
+                        <div class="lg:col-span-7 space-y-4 order-2 lg:order-1">
+                            <h3 class="font-bold text-brand-green-dark text-2xl md:text-3xl">
+                                I'm Dr. Robert Love, PhD
+                            </h3>
+                            
+                            <p class="text-black dark:text-gray-300 leading-relaxed">
+                                I am the founder of Dr. Love's Supplements and I'm excited to reveal an amazing new formula with a special combination of beneficial super-nutrients...
+                            </p>
+                            
+                            <p class="text-black dark:text-gray-300 leading-relaxed">
+                                A mixture of ingredients that is focused on only the most potent natural nutrients.
+                            </p>
+                            
+                            <hr class="my-6 border-gray-200 dark:border-gray-800" />
+                            
+                            <h3 class="font-bold text-brand-navy dark:text-white text-2xl md:text-3xl lg:text-4xl leading-tight">
+                                I've Discovered the Most Powerful Source Of Super Nutrients...
+                            </h3>
+                        </div>
+                        
+                        <!-- Right Image Area -->
+                        <div class="lg:col-span-5 flex justify-center lg:justify-end order-1 lg:order-2">
+                            <img src="https://drlovelionsmane.com/assets/img/dr-robert-love.png" alt="Dr. Robert Love outdoors with his dog" class="w-full max-w-[360px] h-auto rounded-2xl border-[2px] border-[#48815a] object-cover" width="100%" height="100%" loading="lazy"  />
+                        </div>
+                        
+                        <!-- Full Width Content Below Image/Header -->
+                        <div class="lg:col-span-12 space-y-4 pt-2 order-3">
+                            <p class="text-black dark:text-gray-300 leading-relaxed">
+                                But before I reveal this incredible combo, first I have to explain what Moringa is because it's not very well known yet... And I also need to explain why it is absolutely essential that you start taking Moringa immediately.
+                            </p>
+                            <p class="text-black dark:text-gray-300 leading-relaxed">
+                                Moringa Oleifera is often overlooked as a top super-food because it's not commonly found on every continent, but it's an incredible source of nutrients since it contains all nine essential amino acids, as well as carotenoids, and components with nutraceutical properties.
+                            </p>
+                        </div>
+                        
+                    </div>
+                </div>
+                
+                <!-- Bottom Grid Section -->
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-0 md:gap-8 items-start pl-2 md:pl-8">
+                    <!-- Left Text -->
+                    <div class="lg:col-span-8 space-y-3 pt-6 md:pt-6 pb-2 md:pt-0 order-2 lg:order-1">
+                        <h3 class="font-bold text-brand-green-dark text-[24px] md:text-[40px] font-extrabold">
+                            It's literally, nature's medicine.
+                        </h3>
+                        <p class="text-black dark:text-gray-300 leading-relaxed">
+                            Moringa revitalizes the human body at the cellular level, transforming nearly every ailing condition. It also balances natural serotonin and dopamine levels impacted by dietary inefficiencies, so it promotes feelings of happiness in addition to all of its other amazing benefits.
+                        </p>
+                    </div>
+                    
+                    <!-- Right Image -->
+                    <div class="lg:col-span-4 flex justify-center lg:justify-end order-1 lg:order-2">
+                        <img 
+                        src="https://drlovelionsmane.com/ecom/assetsMoringa/images/index-plant.webp" 
+                        alt="Hands holding a young moringa seedling in soil" 
+                        class="max-w-[300px] w-full h-auto object-cover" 
+                        width="300" 
+                        height="200" 
+                        loading="lazy"
+                        />
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+    
+    <!-- Age Statement CTA -->
+    <section class="overflow-hidden block w-full text-center bg-[url('https://drlovelionsmane.com/ecom/assetsMoringa/images/index-plant-bg.webp')] bg-no-repeat bg-[center_20px] bg-contain py-2 my-2 md:py-5 md:my-5 px-4">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="font-bold text-brand-navy dark:text-white text-3xl mb-4">Moringa helps with all ages: It doesn't matter if you're 18 or 80</h2>
+            <p class="mb-6 text-black dark:text-gray-300">It supports healthy blood sugar levels, kicks cholesterol out the window and strengthens your gut, all while boosting your brain health at the same time.</p>
+            <a href="#offer" class="bg-cta-btn border-2 border-[#FFB53D] shadow-cta text-white font-semibold py-3 px-6 rounded-lg inline-flex items-center gap-2 hover:brightness-105 transition-all open-modal-btn" data-target="#b2g6-modal">
+                <i class="bi bi-cart3"></i> BUY 1 GET 3 <i class="bi bi-chevron-right"></i>
+            </a>
+        </div>
+    </section>
+    
+    <!-- How To Use / Highlight Section -->
+    <section class="overflow-hidden py-2 my-2 md:py-5 md:my-5 px-4" id="details">
+        <div class="w-full md:max-w-[1140px] mx-auto bg-brand-green-trans p-2 md:p-6 rounded-xl relative transition-colors">
+            
+            <img id="m-powder" class="hidden lg:block absolute left-0 top-1/2 -translate-y-1/2" src="https://drlovelionsmane.com/ecom/assetsMoringa/images/index-moringa-powder.png" loading="lazy" alt="Moringa Powder" />
+            
+            <div class="rounded-xl bg-brand-green-light p-4 lg:p-12 pl-4 lg:pl-20 transition-colors">
+                
+                <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center mb-8">
+                    <div class="md:col-span-3 text-center flex justify-center">
+                        <img src="https://drlovelionsmane.com/ecom/assetsMoringa/images/newBottle/nobgtilted.png" alt="Dr. Love Organic Moringa" class="w-3/4 max-w-[100px] md:max-w-[200px] -rotate-12" />
+                    </div>
+                    <div class="md:col-span-9 text-center md:text-left">
+                        <h2 class="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-3">
+                            <span class="text-brand-green-accent">Moringa</span> travels into your cells, so you can feel the effects throughout your whole body
+                        </h2>
+                        <p class="text-black dark:text-gray-300">
+                            Moringa is a true natural superfood, packed with essential vitamins and antioxidants to keep your heart healthy, help your digestive system work smoothly, neutralize harmful toxins and make your mind just as sharp as when you were 20 years old.
+                        </p>
+                    </div>
+                </div>
+                
+                <hr class="border-gray-300 dark:border-gray-700 my-6" />
+                
+                <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+                    <div class="md:col-span-6 text-center md:text-left">
+                        <h3 class="font-bold text-gray-900 dark:text-white text-2xl mb-2">How To Use</h3>
+                        <p class="text-black dark:text-gray-300">Take two (2) moringa capsules, once per day with any meal.</p>
+                    </div>
+                    <div class="md:col-span-6">
+                        <div class="flex justify-center md:justify-end gap-4">
+                            
+                            <div class="bg-white dark:bg-gray-800 border border-transparent dark:border-gray-700 rounded-2xl p-3 shadow-md text-center flex flex-col items-center justify-center w-[100px] h-[110px] transition-colors">
+                                <span class="bg-brand-green-accent text-white rounded-full px-2 py-0.5 mb-2 font-semibold text-xs">2X</span>
+                                <i class="bi bi-capsule text-2xl text-brand-green-accent"></i>
+                            </div>
+                            
+                            <div class="bg-white dark:bg-gray-800 border border-transparent dark:border-gray-700 rounded-2xl p-3 shadow-md text-center flex flex-col items-center justify-center w-[100px] h-[110px] transition-colors">
+                                <span class="bg-brand-green-accent text-white rounded-full px-2 py-0.5 mb-2 font-semibold text-xs">DAILY</span>
+                                <i class="bi bi-arrow-repeat text-2xl text-brand-green-accent"></i>
+                            </div>
+                            
+                            <div class="bg-white dark:bg-gray-800 border border-transparent dark:border-gray-700 rounded-2xl p-3 shadow-md text-center flex flex-col items-center justify-center w-[100px] h-[110px] transition-colors">
+                                <span class="bg-brand-green-accent text-white rounded-full px-1.5 py-0.5 mb-2 font-semibold text-[10px] leading-tight">WITH MEAL</span>
+                                <i class="bi bi-cup-hot text-2xl text-brand-green-accent"></i>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+    
+    <!-- What Is Moringa -->
+    <section class="overflow-hidden py-2 my-2 md:py-5 md:my-5 px-4 bg-brand-green-light transition-colors">
+        <div class="w-full md:max-w-[1140px] mx-auto">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-4 md:gap-8 items-center bg-brand-green-light py-6 p-0 md:p-8 rounded-xl transition-colors">
+                <div class="lg:col-span-7">
+                    <h2 class="font-bold text-brand-navy dark:text-white text-3xl md:text-4xl mb-4">What Is Moringa?</h2>
+                    <p class="text-brand-green-dark font-semibold mb-4">Moringa oleifera is an exotic plant with incredible medicinal properties. It's native to India, and it also grows in tropical parts of the world such as Asia, Africa and South America.</p>
+                    <p class="mb-4 text-black dark:text-gray-300">This plant is also known as the horseradish tree or drumstick tree. In some places, it's even called "mother's milk" or "the miracle tree." The entire plant has valuable nutrients, but it's the leaves that are especially prized in traditional medicine.</p>
+                    <p class="text-black dark:text-gray-300">The leaves, flowers, seeds, fruit and roots of moringa oleifera have been used in tribal medicinal around the world for thousands of years. In ancient India, this plant was believed to cure 300 different diseases and is still used prominently in Ayurvedic medicine to this day. From the powerful warriors that drank moringa tea in the past, to traditional healers that recognized the plant's amazing curative effects, moringa has a rich history related to health.</p>
+                </div>
+                <div class="lg:col-span-5 flex justify-center bg-white dark:bg-gray-900 p-4 rounded-2xl transition-colors">
+                    <img src="https://drlovelionsmane.com/ecom/assetsMoringa/images/moringaPowderNew.png" alt="Fresh moringa leaves and a bowl of moringa powder" class="rounded-2xl max-w-full h-auto" width="520" height="380" loading="lazy" />
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Nutrients Panel -->
+    <section class="overflow-hidden py-2 my-2 md:py-5 md:my-5 px-4">
+        <div class="w-full md:max-w-[1140px] mx-auto">
+            <div class="bg-brand-green-light p-4 md:p-8 rounded-xl mb-12 bg-none md:bg-[url('https://drlovelionsmane.com/ecom/assetsMoringa/images/index-plant-bg-right.webp')] md:bg-no-repeat md:bg-[700px_center] md:bg-[length:55%] transition-colors">
+                <div class="max-w-4xl">
+                    <h3 class="font-bold text-brand-navy dark:text-white text-2xl md:text-3xl mb-4">
+                        <span class="text-brand-green-dark">Moringa</span> leaves are literally packed with vitamins, minerals, and healthy nutrients.
+                    </h3>
+                    <p class="mb-4 text-black dark:text-gray-300">Did you know that moringa has 7 times more vitamin C than an orange? It also has 14 times more potassium than a banana! Here are some of the fantastic nutrients you get from this "miracle" plant: Vitamin A, vitamin B2, vitamin B6, folate, magnesium, iron, calcium and protein.</p>
+                    <p class="mb-4 text-black dark:text-gray-300">The secret behind moringa's amazing protective effects are its superstar antioxidants, especially quercetin and chlorogenic acid. Quercetin is responsible for lowering blood pressure. Chlorogenic acid helps to balance blood sugar after you eat.</p>
+                    <p class="text-black dark:text-gray-300">Moringa is popular because people are realizing how much their bodies need protection at a cellular level. These days, everyone is surrounded by so many dangerous toxins, pesticides, pollutants and cancer-causing compounds. Antioxidants can help your body neutralize these harmful substances. If you want to give your cells the gift of incredible antioxidant protection, moringa is the ideal solution, pure and simple.</p>
+                </div>
+            </div>
+            
+            <div class="bg-brand-green-light p-4 md:p-8 rounded-xl transition-colors">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-4 md:gap-8 items-center">
+                    <div class="lg:col-span-8 order-2 lg:order-1">
+                        <p class="text-brand-green-dark font-bold mb-2">Only the Best Natural Ingredients</p>
+                        <h3 class="font-bold text-brand-navy dark:text-white text-2xl md:text-3xl mb-4">100% Pure Moringa Leaves</h3>
+                        <p class="text-black dark:text-gray-300">Moringa oleifera are the part of the plant with the highest concentration of beneficial antioxidants and nutrients. To maintain this spectacular nutritional content, the leaves have to be selected, picked and handled carefully. At Dr. Love's Supplements, we use only the purest moringa of the highest quality. That's why our moringa is so much more effective than other companies which often use cheap fillers.</p>
+                    </div>
+                    <div class="lg:col-span-4 order-1 lg:order-2 flex justify-center lg:justify-end">
+                        <img src="https://drlovelionsmane.com/ecom/assetsMoringa/images/newBottle/nobgtilted.png" alt="Bottle of Dr. Love Organic Moringa capsules" class="max-w-full h-auto" width="150" height="150" loading="lazy" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="overflow-hidden py-2 my-2 md:py-5 md:my-5 px-4">
+        <div class="w-full md:max-w-[1140px] mx-auto">
+            <div class="flex flex-col md:flex-row gap-[20px] w-full md:max-w-[1140px] p-4 md:p-5 mx-auto relative bg-brand-green-dark rounded-[15px] items-center transition-colors">
+                <h1 class="text-white text-[24px] md:text-[45px] leading-[28px] md:leading-[45px] text-center font-semibold">
+                    Join thousands of men and women and start feeling more energized
+                </h1>
+                <img src="https://drlovelionsmane.com/ecom/assetsMoringa/images/newBottle/trioBottle.png" class="md:max-w-[312px] drop-shadow-lg" alt="3 Bottles">
+            </div>
+        </div>
+    </section>
+
+    <!-- Offer Section #1 -->
+    <section class="overflow-hidden bg-brand-green-light py-2 my-2 md:py-5 md:my-5 px-4 transition-colors" id="offer">
+        <div class="w-full md:max-w-[1140px] mx-auto">
+            
+            <!-- Offer Card -->
+            <div class="py-2 md:py-10">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                    <div class="lg:col-span-5 text-center flex flex-col items-center bg-white dark:bg-gray-900 border border-transparent dark:border-gray-800 p-6 md:p-8 rounded-xl transition-colors">
+                        <img src="https://drlovelionsmane.com/ecom/assetsMoringa/images/newBottle/nobgtilted.png" alt="Dr. Love Organic Moringa bottle, front label" class="max-w-[240px] h-auto mb-4" width="150" height="150" loading="lazy" />
+                        <span class="bg-brand-green-accent text-white px-4 py-2 rounded-full font-semibold text-sm mb-4 inline-block">BUY 1 GET 3 FREE</span>
+                        
+                        <div class="grid grid-cols-3 gap-2 w-full max-w-xs">
+                            <div><img src="https://drlovelionsmane.com/ecom/assetsMoringa/images/newBottle/nobgtilted.png" alt="Dr. Love Organic Moringa bottle" class="w-full h-auto" /></div>
+                            <div><img src="https://drlovelionsmane.com/ecom/assetsMoringa/images/newBottle/nobgtilted.png" alt="Dr. Love Organic Moringa bottle" class="w-full h-auto" /></div>
+                            <div><img src="https://drlovelionsmane.com/ecom/assetsMoringa/images/newBottle/nobgtilted.png" alt="Dr. Love Organic Moringa bottle" class="w-full h-auto" /></div>
+                        </div>
+                    </div>
+                    
+                    <div class="lg:col-span-7">
+                        <h3 class="font-bold text-brand-navy dark:text-white text-2xl md:text-3xl mb-2">Buy 1 &amp; Get 3 Bottles For Free!</h3>
+                        <p class="text-brand-green-dark font-bold text-2xl md:text-3xl mb-4">100% Pure Moringa</p>
+                        
+                        <div class="flex flex-col sm:flex-row gap-4 mb-4">
+                            <span class="font-semibold text-brand-navy dark:text-gray-200 flex items-center text-sm md:text-base"><i class="bi bi-cpu text-brand-green-dark me-1 "></i>BRAIN</span>
+                            <span class="font-semibold text-brand-navy dark:text-gray-200 flex items-center text-sm md:text-base"><i class="bi bi-heart-pulse text-brand-green-dark me-1 "></i>HEART</span>
+                            <span class="font-semibold text-brand-navy dark:text-gray-200 flex items-center text-sm md:text-base"><i class="bi bi-droplet text-brand-green-dark me-1 "></i>BLOOD SUGAR</span>
+                        </div>
+                        
+                        <p class="italic text-black dark:text-gray-300 mb-6 text-[26px]">"Join thousands of men and women and start feeling more energized"</p>
+                        
+                        <div class="grid items-center gap-0 mb-6">
+                            <div class="flex flex-col md:flex-row items-center md:items-end gap-2 rounded-full p-4 md:p-0 text-center">
+                                <span class="text-4xl md:text-5xl font-bold text-brand-navy dark:text-white">$59</span>
+                                <div class="pb-1">
+                                    <span class="block text-xs text-black dark:text-gray-400 uppercase font-medium">Regular Price</span>
+                                    <span class="line-through text-red-500">$236</span>
+                                </div>
+                                <a href="#" class="bg-cta-btn border-2 border-[#FFB53D] shadow-cta text-white font-semibold py-3 px-6 rounded-lg inline-flex items-center gap-2 hover:brightness-105 transition-all open-modal-btn" data-target="#b2g6-modal">
+                                    <i class="bi bi-cart3"></i> BUY 1 GET 3 <i class="bi bi-chevron-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center gap-4">
+                            <img src="https://drlovelionsmane.com/assets/img/guarantee-badge-2.png" alt="180 days money back guarantee seal" class="w-[110px] h-[110px] object-contain" width="110" height="110" loading="lazy" />
+                            <p class="font-semibold text-brand-navy dark:text-white">180 Days Money Back Guarantee</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+    
+    <!-- Supplement Facts Section -->
+    <section class="overflow-hidden py-2 my-2 md:py-5 md:my-5 px-4">
+        <div class="w-full md:max-w-[1140px] mx-auto">
+            <div class="bg-brand-green-light p-4 md:p-8 rounded-xl transition-colors">
+                <div class="grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-8 items-center">
+                    <div class="md:col-span-4">              
+                        <img src="https://drlovelionsmane.com/ecom/assetsMoringa/images/newBottle/supplements.png" alt="Dr. Love Organic Moringa bottle" class="w-full max-w-full md:max-w-[300px] md:max-w-none h-auto" width="100%" height="auto" loading="lazy" />                
+                    </div>
+                    
+                    <div class="md:col-span-8">
+                        <h3 class="font-bold text-brand-green-dark text-2xl md:text-3xl mb-4">Ingredients</h3>
+                        <p class="text-black dark:text-gray-300">Our 100% Pure Moringa only contains moringa leaves of the highest quality, picked fresh, expertly dried to lock in nutrients and ground into powder.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Cholesterol / Blood Sugar Benefits -->
+    <section class="overflow-hidden bg-brand-green-light py-12 my-5 px-4 transition-colors">
+        <div class="w-full md:max-w-[1140px] mx-auto">
+            <h2 class="font-bold text-brand-navy dark:text-white text-center text-3xl md:text-4xl mb-8">A Smart Way To Lower Your Cholesterol and Balance Blood Sugar Levels</h2>
+            
+            <div class="bg-white dark:bg-gray-900 rounded-[10px] p-4 md:p-4 mb-4 flex flex-col sm:flex-row gap-4 items-center text-center sm:text-left transition-colors border border-transparent dark:border-gray-800">
+                <div class="w-12 h-12 rounded-full border-2 border-brand-green-dark flex items-center justify-center text-brand-green-dark text-2xl flex-shrink-0">
+                    <i class="bi bi-cpu"></i>
+                </div>
+                <div>
+                    <h3 class="font-bold text-brand-green-dark mb-2 text-[32px]">Complete brain protection:</h3>
+                    <p class="text-black dark:text-gray-300">Studies suggest that moringa can keep brain cells in excellent health, potentially healing neurons and balancing brain chemicals. This can enhance mood, concentration and memory.</p>
+                </div>
+            </div>
+            
+            <div class="bg-white dark:bg-gray-900 rounded-[10px] p-4 md:p-4 mb-4 flex flex-col sm:flex-row gap-4 items-center text-center sm:text-left transition-colors border border-transparent dark:border-gray-800">
+                <div class="w-12 h-12 rounded-full border-2 border-brand-green-dark flex items-center justify-center text-brand-green-dark text-2xl flex-shrink-0">
+                    <i class="bi bi-heart-pulse"></i>
+                </div>
+                <div>
+                    <h3 class="font-bold text-brand-green-dark mb-2 text-[32px]">Strong heart:</h3>
+                    <p class="text-black dark:text-gray-300">By fighting inflammation around the body, moringa supports a healthier heart, clearer arteries, less painful joints and better digestion. This incredible superfood balances healthy cholesterol levels at the same time, allowing you to experience an overall boost in energy and wellbeing so you can run, climb and enjoy those long walks once again.</p>
+                </div>
+            </div>
+            
+            <div class="bg-white dark:bg-gray-900 rounded-[10px] p-4 md:p-4 flex flex-col sm:flex-row gap-4 items-center text-center sm:text-left transition-colors border border-transparent dark:border-gray-800">
+                <div class="w-12 h-12 rounded-full border-2 border-brand-green-dark flex items-center justify-center text-brand-green-dark text-2xl flex-shrink-0">
+                    <i class="bi bi-droplet"></i>
+                </div>
+                <div>
+                    <h3 class="font-bold text-brand-green-dark mb-2 text-[32px]">Lower blood sugar:</h3>
+                    <p class="text-black dark:text-gray-300">Powerful plant compounds found — in moringa leaves act similar to insulin, lowering blood sugar naturally. When balancing your blood sugar levels is easier, you can enjoy the freedom of life WITHOUT the stress of constantly managing your blood sugar. Having your blood sugar under control makes dropping pant sizes easier too!</p>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+    
+    <!-- Take Back Control Section -->
+    <section class="py-2 my-2 md:py-5 md:my-5 px-4 overflow-hidden">
+        <div class="w-full md:max-w-[1140px] mx-auto">
+            <h2 class="font-bold text-brand-navy dark:text-white text-center text-2xl md:text-3xl">What used to be too good to be true is now possible with our laboratory blend of 100% Pure Moringa.</h2>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 hidden">
+                <div class="bg-brand-green-light p-6 md:p-8 rounded-xl text-center flex flex-col justify-between h-full transition-colors">
+                    <h3 class="font-bold text-brand-navy dark:text-white text-2xl mb-1">Take back control of your stress, sleep and energy.</h3>
+                    <p class="text-black dark:text-gray-300 mb-6">Take back control of your LIFE.</p>
+                    
+                    <div class="grid grid-cols-3 gap-4">
+                        <div class="flex flex-col items-center">
+                            <div class="w-12 h-12 rounded-full bg-brand-green-dark text-white flex items-center justify-center text-2xl mb-2">
+                                <i class="bi bi-moon-stars"></i>
+                            </div>
+                            <p class="text-sm font-medium text-black dark:text-white">Say YES to good sleep.</p>
+                        </div>
+                        
+                        <div class="flex flex-col items-center">
+                            <div class="w-12 h-12 rounded-full bg-brand-green-dark text-white flex items-center justify-center text-2xl mb-2">
+                                <i class="bi bi-lightning-charge"></i>
+                            </div>
+                            <p class="text-sm font-medium text-black dark:text-white">Say YES to more energy.</p>
+                        </div>
+                        
+                        <div class="flex flex-col items-center">
+                            <div class="w-12 h-12 rounded-full bg-brand-green-dark text-white flex items-center justify-center text-2xl mb-2">
+                                <i class="bi bi-star"></i>
+                            </div>
+                            <p class="text-sm font-medium text-black dark:text-white">Say YES to feeling incredible.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-brand-green-light p-6 md:p-8 rounded-xl text-center flex flex-col justify-center items-center h-full transition-colors">
+                    <h3 class="font-bold text-brand-navy dark:text-white text-3xl mb-2">Say YES to Moringa.</h3>
+                    <p class="text-black dark:text-gray-300 mb-6">Take back control of your blood sugar, energy and LIFE.</p>
+                    <a href="#offer" class="bg-cta-btn border-2 border-[#FFB53D] shadow-cta text-white font-semibold py-3 px-6 rounded-lg inline-flex items-center gap-2 hover:brightness-105 transition-all open-modal-btn" data-target="#b2g6-modal">
+                        <i class="bi bi-cart3"></i> BUY 1 GET 3 <i class="bi bi-chevron-right"></i>
+                    </a>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+
+    <!-- Offer Section #2 -->
+    <section class="overflow-hidden bg-brand-green-light py-2 my-2 md:py-5 md:my-5 px-4 transition-colors" id="offer-2">
+        <div class="w-full md:max-w-[1140px] mx-auto">
+            
+            <!-- Offer Card -->
+            <div class="py-2 md:py-10">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                    <div class="lg:col-span-5 text-center flex flex-col items-center bg-white dark:bg-gray-900 border border-transparent dark:border-gray-800 p-6 md:p-8 rounded-xl transition-colors">
+                        <img src="https://drlovelionsmane.com/ecom/assetsMoringa/images/newBottle/nobgtilted.png" alt="Dr. Love Organic Moringa bottle, front label" class="max-w-[240px] h-auto mb-4" width="150" height="150" loading="lazy" />
+                        <span class="bg-brand-green-accent text-white px-4 py-2 rounded-full font-semibold text-sm mb-4 inline-block">BUY 1 GET 3 FREE</span>
+                        
+                        <div class="grid grid-cols-3 gap-2 w-full max-w-xs">
+                            <div><img src="https://drlovelionsmane.com/ecom/assetsMoringa/images/newBottle/nobgtilted.png" alt="Dr. Love Organic Moringa bottle" class="w-full h-auto" /></div>
+                            <div><img src="https://drlovelionsmane.com/ecom/assetsMoringa/images/newBottle/nobgtilted.png" alt="Dr. Love Organic Moringa bottle" class="w-full h-auto" /></div>
+                            <div><img src="https://drlovelionsmane.com/ecom/assetsMoringa/images/newBottle/nobgtilted.png" alt="Dr. Love Organic Moringa bottle" class="w-full h-auto" /></div>
+                        </div>
+                    </div>
+                    
+                    <div class="lg:col-span-7">
+                        <h3 class="font-bold text-brand-navy dark:text-white text-2xl md:text-3xl mb-2">Buy 1 &amp; Get 3 Bottles For Free!</h3>
+                        <p class="text-brand-green-dark font-bold text-2xl md:text-3xl mb-4">100% Pure Moringa</p>
+                        
+                        <div class="flex flex-col sm:flex-row gap-4 mb-4">
+                            <span class="font-semibold text-brand-navy dark:text-gray-200 flex items-center text-sm md:text-base"><i class="bi bi-cpu text-brand-green-dark me-1 "></i>BRAIN</span>
+                            <span class="font-semibold text-brand-navy dark:text-gray-200 flex items-center text-sm md:text-base"><i class="bi bi-heart-pulse text-brand-green-dark me-1 "></i>HEART</span>
+                            <span class="font-semibold text-brand-navy dark:text-gray-200 flex items-center text-sm md:text-base"><i class="bi bi-droplet text-brand-green-dark me-1 "></i>BLOOD SUGAR</span>
+                        </div>
+                        
+                        <p class="italic text-black dark:text-gray-300 mb-6 text-[26px]">"Join thousands of men and women and start feeling more energized"</p>
+                        
+                        <div class="grid items-center gap-0 mb-6">
+                            <div class="flex flex-col md:flex-row items-center md:items-end gap-2 rounded-full p-4 md:p-0 text-center">
+                                <span class="text-4xl md:text-5xl font-bold text-brand-navy dark:text-white">$59</span>
+                                <div class="pb-1">
+                                    <span class="block text-xs text-black dark:text-gray-400 uppercase font-medium">Regular Price</span>
+                                    <span class="line-through text-red-500">$236</span>
+                                </div>
+                                <a href="#" class="bg-cta-btn border-2 border-[#FFB53D] shadow-cta text-white font-semibold py-3 px-6 rounded-lg inline-flex items-center gap-2 hover:brightness-105 transition-all open-modal-btn" data-target="#b2g6-modal">
+                                    <i class="bi bi-cart3"></i> BUY 1 GET 3 <i class="bi bi-chevron-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center gap-4">
+                            <img src="https://drlovelionsmane.com/assets/img/guarantee-badge-2.png" alt="180 days money back guarantee seal" class="w-[110px] h-[110px] object-contain" width="110" height="110" loading="lazy" />
+                            <p class="font-semibold text-brand-navy dark:text-white">180 Days Money Back Guarantee</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+
+    <!-- Comparison Table Section -->
+    <section class="py-2 my-2 md:py-5 md:my-5 px-4 overflow-hidden">
+        <div class="w-full md:max-w-[1140px] mx-auto">
+            <h2 class="font-bold text-brand-navy dark:text-white text-center text-2xl md:text-3xl mb-2">
+                More than 17,000 people start their day with Dr. Love's Supplements' <span class="text-brand-green-dark">Moringa</span> instead of other big name brands
+            </h2>
+            <p class="text-center font-semibold mb-6 text-black dark:text-gray-300">And it's obvious why!</p>
+            
+            <div class="bg-brand-green-light rounded-xl shadow-sm overflow-hidden border-[2px] border-[#48815a] transition-colors">
+                <p class="text-center p-4 md:p-6 text-black dark:text-gray-300 border-b border-gray-200 dark:border-gray-800">
+                    Most companies choose inferior ingredients to make bigger profits. Not us. At Dr. Love's Supplements, we give you exactly what your body needs for the most amazing benefits — nothing less and nothing more.
+                </p>                
+                
+                <table class="w-full text-left border-collapse table-fixed text-xs sm:text-base [word-wrap:anywhere] sm:[word-wrap:normal]">
+                  <thead>
+                    <tr class="bg-gray-50 dark:bg-gray-900 border-b border-gray-200 dark:border-gray-800 transition-colors">
+                      <th scope="col" class="w-1/3 p-2 sm:p-4 text-black dark:text-white font-semibold relative">
+                        <img src="https://drlovelionsmane.com/ecom/assetsMoringa/images/newBottle/nobgtilted.png" alt="Dr. Love's Supplements" class="absolute -bottom-[15px] sm:-bottom-[20px] left-[5px] sm:left-[10px] w-[35px] sm:w-[50px] h-auto object-contain" loading="lazy" />
+                      </th>
+                      <th scope="col" class="w-1/3 p-2 sm:p-4 text-black dark:text-white font-bold border-l border-r border-dashed border-gray-300 dark:border-gray-700">100% Pure Moringa Leaf</th>
+                      <th scope="col" class="w-1/3 p-2 sm:p-4 text-black dark:text-white font-bold">Fillers</th>
+                    </tr>
+                  </thead>
+                  <tbody class="divide-y divide-gray-200 dark:divide-gray-800">
+                    <!-- Highlight Row -->
+                    <tr class="bg-emerald-50 dark:bg-emerald-950/30">
+                      <td scope="row" class="p-2 sm:p-4 pt-4 sm:pl-16 font-semibold text-brand-green-dark">
+                        <span>Dr. Love's Supplements</span>
+                      </td>
+                      <td class="p-2 sm:p-4 border-l border-r border-dashed border-gray-300 dark:border-gray-700">
+                        <div class="flex items-center justify-center gap-1 sm:gap-2">
+                          <i class="text-brand-green-dark bi bi-check-circle mt-0.5 shrink-0"></i>
+                          <span class="dark:text-gray-200">Yes</span>
+                        </div>
+                      </td>
+                      <td class="p-2 sm:p-4">
+                        <div class="flex items-center justify-center gap-1 sm:gap-2">
+                          <i class="text-brand-green-dark bi bi-check-circle mt-0.5 shrink-0"></i>
+                          <span class="dark:text-gray-200">None</span>
+                        </div>
+                      </td>
+                    </tr>
+
+                    <tr class="bg-white dark:bg-gray-900 transition-colors">
+                      <td scope="row" class="p-2 sm:p-4 sm:pl-16 font-medium dark:text-gray-200">Carlyle</td>
+                      <td class="p-2 sm:p-4 border-l border-r border-dashed border-gray-300 dark:border-gray-700 break-words">
+                        <div class="flex items-center justify-center gap-1 sm:gap-2">
+                          <i class="text-red-600 bi bi-x-circle mt-0.5 shrink-0"></i>
+                          <span class="dark:text-gray-300">No</span>
+                        </div>
+                      </td>
+                      <td class="p-2 sm:p-4">
+                        <div class="flex flex-col sm:flex-row items-start gap-1 sm:gap-2">
+                          <i class="text-red-600 bi bi-x-circle mt-0.5 shrink-0"></i>
+                          <span class="dark:text-gray-300">Vegetable magnesium, stearate and silica</span>
+                        </div>
+                      </td>
+                    </tr>
+
+                    <tr class="dark:bg-gray-950 transition-colors">
+                      <td scope="row" class="p-2 sm:p-4 sm:pl-16 font-medium dark:text-gray-200">Nature's Truth</td>
+                      <td class="p-2 sm:p-4 border-l border-r border-dashed border-gray-300 dark:border-gray-700 break-words">
+                        <div class="flex items-center justify-center gap-1 sm:gap-2">
+                          <i class="text-red-600 bi bi-x-circle mt-0.5 shrink-0"></i>
+                          <span class="dark:text-gray-300">No</span>
+                        </div>
+                      </td>
+                      <td class="p-2 sm:p-4">
+                        <div class="flex flex-col sm:flex-row items-start gap-1 sm:gap-2">
+                          <i class="text-red-600 bi bi-x-circle mt-0.5 shrink-0"></i>
+                          <span class="dark:text-gray-300">Vegetable magnesium, stearate and silica</span>
+                        </div>
+                      </td>
+                    </tr>
+
+                    <tr class="bg-white dark:bg-gray-900 transition-colors">
+                      <td scope="row" class="p-2 sm:p-4 sm:pl-16 font-medium dark:text-gray-200">Bronson</td>
+                      <td class="p-2 sm:p-4 border-l border-r border-dashed border-gray-300 dark:border-gray-700 break-words">
+                        <div class="flex items-center justify-center gap-1 sm:gap-2">
+                          <i class="text-red-600 bi bi-x-circle mt-0.5 shrink-0"></i>
+                          <span class="dark:text-gray-300">No</span>
+                        </div>
+                      </td>
+                      <td class="p-2 sm:p-4">
+                        <div class="flex flex-col sm:flex-row items-start gap-1 sm:gap-2">
+                          <i class="text-red-600 bi bi-x-circle mt-0.5 shrink-0"></i>
+                          <span class="dark:text-gray-300">Microcrystalline cellulose, magnesium stearate, silicon dioxide</span>
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+                
+            </div>
+            
+        </div>
+    </section>
+    
+    <!-- Why Afford Lowest Price -->
+    <section class="py-2 my-2 md:py-5 md:my-5 px-4 overflow-hidden">
+        <div class="w-full md:max-w-[1140px] mx-auto">
+            <div class="bg-brand-green-light p-4 md:p-8 rounded-xl text-center mx-auto transition-colors">
+                <h2 class="font-bold text-brand-navy dark:text-white text-2xl md:text-3xl mb-6">
+                    How we can afford to sell the highest quality <span class="text-brand-green-dark">100% Pure Moringa for the lowest price</span>
+                </h2>
+                <p class="mb-4 text-black dark:text-gray-300">Unlike the brands in grocery stores, we cut out the middleman and deliver the best products directly to you. Because we choose not to sell in pharmacies or private clinics, we can pass on huge cost savings to you.</p>
+                <p class="mb-4 text-black dark:text-gray-300">We don't pay to have our name on billboards like big pharma. We don't throw away money on celebrity endorsements, either. The amazing natural superfoods in our products speak for themselves. We're proud to have thousands of people like you shouting our name off the top of mountains!</p>
+                <p class="text-black dark:text-gray-300 font-medium">We'd rather spend less on marketing so you can save more money on your health.</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Offer Section #2 id="offer-bottom" -->    
+    <section class="overflow-hidden py-2 my-2 md:py-5 md:my-5 px-4">
+        <div class="w-full md:max-w-[1140px] mx-auto">
+            <div class="flex flex-col md:flex-row gap-[20px] w-full md:max-w-[1140px] p-4 md:p-5 mx-auto relative bg-brand-green-dark rounded-[15px] items-center transition-colors">
+                <h1 class="text-white text-[24px] md:text-[45px] leading-[28px] md:leading-[45px] text-center font-semibold">
+                    Join thousands of men and women and start feeling more energized
+                </h1>
+                <img src="https://drlovelionsmane.com/ecom/assetsMoringa/images/newBottle/trioBottle.png" class="md:max-w-[312px] drop-shadow-lg" alt="3 Bottles">
+            </div>
+        </div>
+    </section>
+
+    <!-- Offer Section #2 -->
+    <section class="overflow-hidden bg-brand-green-light py-2 my-2 md:py-5 md:my-5 px-4 transition-colors" id="offer-bottom">
+        <div class="w-full md:max-w-[1140px] mx-auto">
+            
+            <!-- Offer Card -->
+            <div class="py-2 md:py-10">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                    <div class="lg:col-span-5 text-center flex flex-col items-center bg-white dark:bg-gray-900 border border-transparent dark:border-gray-800 p-6 md:p-8 rounded-xl transition-colors">
+                        <img src="https://drlovelionsmane.com/ecom/assetsMoringa/images/newBottle/nobgtilted.png" alt="Dr. Love Organic Moringa bottle, front label" class="max-w-[240px] h-auto mb-4" width="150" height="150" loading="lazy" />
+                        <span class="bg-brand-green-accent text-white px-4 py-2 rounded-full font-semibold text-sm mb-4 inline-block">BUY 1 GET 3 FREE</span>
+                        
+                        <div class="grid grid-cols-3 gap-2 w-full max-w-xs">
+                            <div><img src="https://drlovelionsmane.com/ecom/assetsMoringa/images/newBottle/nobgtilted.png" alt="Dr. Love Organic Moringa bottle" class="w-full h-auto" /></div>
+                            <div><img src="https://drlovelionsmane.com/ecom/assetsMoringa/images/newBottle/nobgtilted.png" alt="Dr. Love Organic Moringa bottle" class="w-full h-auto" /></div>
+                            <div><img src="https://drlovelionsmane.com/ecom/assetsMoringa/images/newBottle/nobgtilted.png" alt="Dr. Love Organic Moringa bottle" class="w-full h-auto" /></div>
+                        </div>
+                    </div>
+                    
+                    <div class="lg:col-span-7">
+                        <h3 class="font-bold text-brand-navy dark:text-white text-2xl md:text-3xl mb-2">Buy 1 &amp; Get 3 Bottles For Free!</h3>
+                        <p class="text-brand-green-dark font-bold text-2xl md:text-3xl mb-4">100% Pure Moringa</p>
+                        
+                        <div class="flex flex-col sm:flex-row gap-4 mb-4">
+                            <span class="font-semibold text-brand-navy dark:text-gray-200 flex items-center text-sm md:text-base"><i class="bi bi-cpu text-brand-green-dark me-1 "></i>BRAIN</span>
+                            <span class="font-semibold text-brand-navy dark:text-gray-200 flex items-center text-sm md:text-base"><i class="bi bi-heart-pulse text-brand-green-dark me-1 "></i>HEART</span>
+                            <span class="font-semibold text-brand-navy dark:text-gray-200 flex items-center text-sm md:text-base"><i class="bi bi-droplet text-brand-green-dark me-1 "></i>BLOOD SUGAR</span>
+                        </div>
+                        
+                        <p class="italic text-black dark:text-gray-300 mb-6 text-[26px]">"Join thousands of men and women and start feeling more energized"</p>
+                        
+                        <div class="grid items-center gap-0 mb-6">
+                            <div class="flex flex-col md:flex-row items-center md:items-end gap-2 rounded-full p-4 md:p-0 text-center">
+                                <span class="text-4xl md:text-5xl font-bold text-brand-navy dark:text-white">$59</span>
+                                <div class="pb-1">
+                                    <span class="block text-xs text-black dark:text-gray-400 uppercase font-medium">Regular Price</span>
+                                    <span class="line-through text-red-500">$236</span>
+                                </div>
+                                <a href="#" class="bg-cta-btn border-2 border-[#FFB53D] shadow-cta text-white font-semibold py-3 px-6 rounded-lg inline-flex items-center gap-2 hover:brightness-105 transition-all open-modal-btn" data-target="#b2g6-modal">
+                                    <i class="bi bi-cart3"></i> BUY 1 GET 3 <i class="bi bi-chevron-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center gap-4">
+                            <img src="https://drlovelionsmane.com/assets/img/guarantee-badge-2.png" alt="180 days money back guarantee seal" class="w-[110px] h-[110px] object-contain" width="110" height="110" loading="lazy" />
+                            <p class="font-semibold text-brand-navy dark:text-white">180 Days Money Back Guarantee</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+    
+    <!-- Guarantee Section -->
+    <section class="py-2 my-2 md:py-5 md:my-5 px-4 overflow-hidden" id="guarantee">
+        <div class="w-full md:max-w-[1140px] mx-auto">
+            <div class="relative">
+                <div class="bg-brand-guarantee-badge rounded-2xl p-4 md:p-8 transition-colors">
+                    <div class="bg-white dark:bg-gray-900 border border-transparent dark:border-gray-800 rounded-2xl p-4 md:p-8 relative transition-colors">
+                        <p class="font-bold mb-2 text-brand-orange-text">180 DAYS MONEY BACK GUARANTEE</p>
+                        <h3 class="font-bold text-brand-navy dark:text-white text-2xl md:text-3xl mb-4">Health &amp; Happiness Guarantee</h3>
+                        <p class="mb-4 text-black dark:text-gray-300">Here at Dr. Love's Supplements, we have one mission: to help you reach your health and wellness goals FASTER. Unlike the other guys who promote magic pills and snake oil, the natural ingredients in our products are scientifically proven to speed up the process.</p>
+                        <p class="text-black dark:text-gray-300">And to show you how much we believe in this, our guarantee is simple: If you have ANY problem with your order, we will solve it. Simply reach out to our friendly and award winning Customer Happiness Team within 180 days of your order and we'll make sure you're fully taken care of!</p>
+                        
+                        <img src="https://drlovelionsmane.com/assets/img/guarantee-badge-2.png" alt="180 days money back guarantee seal" class="hidden md:block w-100 md:w-100 absolute top-0 right-0 md:top-[-40px] md:right-[-60px] pointer-events-none rotate-[30deg]" width="250" height="250" loading="lazy" />
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+    
+</main>
+
+<!-- Footer -->
+<footer class="bg-brand-green-light dark:bg-gray-900 pt-10 pb-5 mt-5 px-4 overflow-hidden transition-colors">
+    <div class="w-full md:max-w-[1140px] mx-auto">    
+        <img src="https://drlovelionsmane.com/ecom/assetsMoringa/images/moringagood.png" class="w-full md:max-w-[1140px] mx-auto rounded-xl" />   
+        
+        <p class="text-xs text-center text-black dark:text-gray-400 pt-8 leading-relaxed max-w-5xl mx-auto">
+            Disclaimer: These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure or prevent any disease. Please consult your medical doctor before taking any supplements. Please consult your medical doctor if you have any diseases or medical conditions. This product is designed for healthy adults, it is not designed for children or pregnant or nursing women.
+        </p>
+        
+        <div class="flex flex-col md:flex-row items-center justify-between gap-4 text-center md:text-left pt-8 border-t border-gray-200 dark:border-gray-800 mt-6">
+            <p class="font-semibold text-brand-navy dark:text-gray-300 text-sm">Copyright 2026 - ROAR Lion's Mane - All Rights Reserved</p>
+            <div class="flex gap-4">
+                <a href="https://roarlionsmane.net/privacy-policy" target="_blank" class="text-brand-navy dark:text-gray-300 hover:underline text-[14px]">Privacy Policy</a>
+                <a href="https://roarlionsmane.net/terms-of-service" target="_blank" class="text-brand-navy dark:text-gray-300 hover:underline text-[14px]">Terms of Service</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- Modal Wrapper -->
+<div id="b2g6-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/70 p-4 transition-opacity duration-300" role="dialog" aria-hidden="true">
+  
+  <!-- Backdrop Click Listener (Closes Modal) -->
+  <div class="modal-close-trigger absolute inset-0"></div>
+
+  <!-- Modal Container -->
+  <div class="relative z-10 w-full max-w-4xl rounded-2xl bg-white dark:bg-gray-900 p-6 shadow-2xl transition-all sm:p-8 border border-transparent dark:border-gray-800">
+    
+    <!-- Close Button -->
+    <button type="button" class="modal-close-trigger absolute right-4 top-4 text-gray-400 hover:text-gray-600 dark:hover:text-white focus:outline-none text-2xl font-bold leading-none" aria-label="Close">
+      &times;
+    </button>
+
+    <!-- Header -->
+    <div class="text-center mb-6">
+      <h5 class="text-2xl font-bold text-gray-900 dark:text-white">Today Only!</h5>
+      <p class="text-sm text-gray-600 dark:text-gray-400 mt-1">Upgrade and get FREE SHIPPING!</p>
+    </div>
+
+    <!-- Modal Body Section -->
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-6 bg-emerald-50/50 dark:bg-emerald-950/20 p-6 rounded-2xl border border-emerald-100 dark:border-emerald-900/40 items-center">
+      
+      <!-- Left Column: Product Offer -->
+      <div class="md:col-span-7 text-center">
+        <span id="special-offer" class="inline-block bg-brand-green-accent text-white text-xs font-bold uppercase tracking-wider px-4 py-1.5 rounded-full mb-3">
+          Special Offer
+        </span>
+        <h1 class="text-3xl font-extrabold text-brand-green-dark dark:text-brand-green-accent mb-4">
+          Buy 2 Get 6 <span class="text-emerald-700 dark:text-emerald-400">For Free!</span>
+        </h1>
+        <img src="https://drlovelionsmane.com/assets/img/st/moringa/moringa-buy-2-get-6.png" alt="Moringa Buy 2 Get 6 Free" class="mx-auto max-h-56 object-contain">
+      </div>
+
+      <!-- Right Column: Buy Card -->
+      <div class="md:col-span-5 bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-md border border-gray-100 dark:border-gray-700 text-center flex flex-col items-center">
+        <p class="text-brand-green-dark dark:text-brand-green-accent font-bold text-[30px] leading-tight">
+          Yes! I’ll take the Free Shipping
+        </p>
+        <p class="text-gray-500 dark:text-gray-400 font-semibold text-xs mt-1 mb-4">(Total: $118)</p>
+
+        <!-- CTA Primary Button -->
+        <a class="w-full bg-amber-500 hover:bg-amber-600 text-white font-extrabold py-3.5 px-4 rounded-xl shadow-lg transition duration-200 flex items-center justify-center gap-2 text-base uppercase tracking-wide mb-4" 
+           href="https://roarlionsmane.samcart.com/products/morning-moringa-buy-2-get-6-free-bi?utm_source={{ $request.query.utm_source }}&utm_medium={{ $request.query.utm_medium }}&utm_campaign={{ $request.query.utm_campaign }}">
+          <img src="https://drlovelionsmane.com/ecom/assetsMoringa/images/index-cart-icon.png" loading="lazy" alt="Cart icon" class="max-h-40">
+          <span>Buy 2 Get 6 Free</span>
+        </a>
+
+        <!-- Payment Icons -->
+        <img id="m-cards" src="https://drlovelionsmane.com/ecom/assetsMoringa/images/index-modal-cards.png" loading="lazy" alt="cards" class="h-6 object-contain mb-4">
+
+        <!-- Guarantee Badge -->
+        <div class="flex items-center gap-2 text-left text-xs font-semibold text-gray-700 dark:text-gray-300 mt-auto">
+          <img src="https://drlovelionsmane.com/ecom/assetsMoringa/images/index-money-back-image.png" loading="lazy" alt="Money Back Guarantee" class="w-8 h-8 object-contain">
+          <p class="leading-tight">180 Days Money<br><span class="font-bold">Back Guarantee</span></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer / Alternative Option -->
+    <div class="text-center mt-6 pt-2">
+      <p class="text-xs text-gray-600 dark:text-gray-400 mb-3">No Thank you, I’ll pay for my shipping (Total: $59 + S/H)</p>
+        <a class="inline-block rounded-[12px] text-white bg-gradient-to-br from-[#b9b9b9] via-[#a5a5a5] to-[#575658] hover:bg-gradient-to-bl hover:from-[#b9b9b9] hover:via-[#a5a5a5] hover:to-[#575658] font-bold py-2.5 px-6 transition text-sm uppercase" 
+       href="https://roarlionsmane.samcart.com/products/morning-moringa-buy-1-get-3-free-bi?utm_source={{ $request.query.utm_source }}&utm_medium={{ $request.query.utm_medium }}&utm_campaign={{ $request.query.utm_campaign }}">
+           Buy 1 Get 3 FREE
+        </a>
+    </div>
+
+  </div>
+</div>
+
+<!-- Page Modal & Customizer Scripts -->
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+
+  // ===============================================
+  // 1. ORIGINAL MODAL CONTROLLER LOGIC
+  // ===============================================
+  document.querySelectorAll('.open-modal-btn').forEach(button => {
+    button.addEventListener('click', (e) => {
+      e.preventDefault();
+      const targetSelector = button.getAttribute('data-target');
+      const targetModal = document.querySelector(targetSelector);
+      
+      if (targetModal) {
+        targetModal.classList.remove('hidden');
+        targetModal.classList.add('flex');
+        targetModal.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+      }
+    });
+  });
+
+  const closeModal = (modal) => {
+    modal.classList.add('hidden');
+    modal.classList.remove('flex');
+    modal.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+  };
+
+  document.querySelectorAll('.modal-close-trigger').forEach(trigger => {
+    trigger.addEventListener('click', (e) => {
+      const modal = trigger.closest('[role="dialog"]');
+      if (modal) closeModal(modal);
+    });
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      const openModal = document.querySelector('[role="dialog"]:not(.hidden)');
+      if (openModal) closeModal(openModal);
+    }
+  });
+
+
+  // ===============================================
+  // 2. LIVE CUSTOMIZER CONTROL LOGIC
+  // ===============================================
+  const openBtn = document.getElementById('customizer-open-btn');
+  const closeBtn = document.getElementById('customizer-close-btn');
+  const drawer = document.getElementById('customizer-drawer');
+  const backdrop = document.getElementById('customizer-backdrop');
+  
+  const modeLightBtn = document.getElementById('mode-light-btn');
+  const modeDarkBtn = document.getElementById('mode-dark-btn');
+  const fontSelect = document.getElementById('font-select');
+  const themeBtns = document.querySelectorAll('.theme-color-btn');
+  const resetBtn = document.getElementById('reset-settings-btn');
+  const fontLink = document.getElementById('dynamic-font-link');
+
+  // Color Theme Schemes Mapping
+  const themes = {
+    emerald: { primary: '#48815a', accent: '#339763', bgLight: '#F2F8F5' },
+    ocean: { primary: '#2563eb', accent: '#3b82f6', bgLight: '#eff6ff' },
+    purple: { primary: '#7c3aed', accent: '#8b5cf6', bgLight: '#f5f3ff' },
+    sunset: { primary: '#d97706', accent: '#f59e0b', bgLight: '#fffbeb' },
+    rose: { primary: '#e11d48', accent: '#f43f5e', bgLight: '#fff1f2' }
+  };
+
+  // Open / Close Drawer
+  const openDrawer = () => {
+    drawer.classList.remove('translate-x-full');
+    backdrop.classList.remove('hidden');
+  };
+  const closeDrawer = () => {
+    drawer.classList.add('translate-x-full');
+    backdrop.classList.add('hidden');
+  };
+
+  openBtn.addEventListener('click', openDrawer);
+  closeBtn.addEventListener('click', closeDrawer);
+  backdrop.addEventListener('click', closeDrawer);
+
+  // --- Dark Mode ---
+  const setDarkMode = (isDark) => {
+    if (isDark) {
+      document.documentElement.classList.add('dark');
+      modeDarkBtn.classList.add('bg-gray-700', 'text-white');
+      modeDarkBtn.classList.remove('text-gray-600');
+      modeLightBtn.classList.remove('bg-white', 'shadow-sm', 'text-gray-900');
+      modeLightBtn.classList.add('text-gray-600', 'dark:text-gray-300');
+      localStorage.setItem('theme-mode', 'dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+      modeLightBtn.classList.add('bg-white', 'shadow-sm', 'text-gray-900');
+      modeLightBtn.classList.remove('text-gray-600');
+      modeDarkBtn.classList.remove('bg-gray-700', 'text-white');
+      modeDarkBtn.classList.add('text-gray-600');
+      localStorage.setItem('theme-mode', 'light');
+    }
+  };
+
+  modeLightBtn.addEventListener('click', () => setDarkMode(false));
+  modeDarkBtn.addEventListener('click', () => setDarkMode(true));
+
+  // --- Font Loading & Switching ---
+  const applyFont = (fontName) => {
+    const formattedFont = fontName.replace(/\s+/g, '+');
+    fontLink.href = `https://fonts.googleapis.com/css2?family=${formattedFont}:wght@400;500;600;700;800&display=swap`;
+    document.documentElement.style.setProperty('--app-font', `'${fontName}'`);
+    fontSelect.value = fontName;
+    localStorage.setItem('theme-font', fontName);
+  };
+
+  fontSelect.addEventListener('change', (e) => {
+    applyFont(e.target.value);
+  });
+
+  // --- Color Theme Palette Switching ---
+  const applyColorTheme = (themeName) => {
+    const theme = themes[themeName] || themes.emerald;
+    
+    document.documentElement.style.setProperty('--brand-primary', theme.primary);
+    document.documentElement.style.setProperty('--brand-accent', theme.accent);
+    document.documentElement.style.setProperty('--brand-bg-light', document.documentElement.classList.contains('dark') ? '#18221c' : theme.bgLight);
+    document.documentElement.style.setProperty('--brand-trans', `${theme.primary}38`);
+
+    themeBtns.forEach(btn => {
+      const checkIcon = btn.querySelector('.bi-check-lg');
+      if (btn.dataset.theme === themeName) {
+        btn.classList.add('border-white', 'dark:border-gray-800');
+        btn.classList.remove('border-transparent');
+        if (checkIcon) checkIcon.classList.remove('hidden');
+      } else {
+        btn.classList.remove('border-white', 'dark:border-gray-800');
+        btn.classList.add('border-transparent');
+        if (checkIcon) checkIcon.classList.add('hidden');
+      }
+    });
+
+    localStorage.setItem('theme-color', themeName);
+  };
+
+  themeBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      applyColorTheme(btn.dataset.theme);
+    });
+  });
+
+  // --- Reset Preferences ---
+  resetBtn.addEventListener('click', () => {
+    localStorage.removeItem('theme-mode');
+    localStorage.removeItem('theme-font');
+    localStorage.removeItem('theme-color');
+    setDarkMode(false);
+    applyFont('Inter');
+    applyColorTheme('emerald');
+  });
+
+  // --- Initialize Saved Preferences ---
+  const savedMode = localStorage.getItem('theme-mode');
+  const savedFont = localStorage.getItem('theme-font');
+  const savedColor = localStorage.getItem('theme-color');
+
+  if (savedMode === 'dark') setDarkMode(true);
+  else setDarkMode(false);
+
+  if (savedFont) applyFont(savedFont);
+  if (savedColor) applyColorTheme(savedColor);
+  else applyColorTheme('emerald');
+
+});    
+</script>        
+</body>
+</html>

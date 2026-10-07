@@ -1,0 +1,19 @@
+{
+  "name": "florencia-barrera-workspace-main",
+  "version": "1.0.0",
+  "description": "A static HTML workspace for a Dr. Love's 100% Pure Moringa promotional landing page.",
+  "main": "index.js",
+  "scripts": {
+    "dev": "tailwindcss -i ./assets/css/tailwind.css -o ./assets/css/tailwind.min.css --watch",
+    "build": "tailwindcss -i ./assets/css/tailwind.css -o ./assets/css/tailwind.min.css --minify"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@tailwindcss/cli": "^4.3.0"
+  },
+  "devDependencies": {
+    "tailwindcss": "^4.3.3"
+  }
+}
