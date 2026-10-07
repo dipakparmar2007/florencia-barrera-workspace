@@ -75,22 +75,6 @@ Automatically generated public URL index for all domains and brands.
 - [Michael](./brands/michael.md) - 0 pages
 - [British Invasion](./brands/british-invasion.md) - 0 pages
 - [Run Media](./brands/run-media.md) - 0 pages
-
----
-
-# Sitemap
-
-Each public domain should maintain its own XML sitemap.
-
-| Domain | Sitemap |
-|---|---|
-| Dr. Love Official | https://dipakparmar2007.github.io/florencia-barrera-workspace/sites/drloveofficial//sitemap.xml |
-| Robert Love | https://dipakparmar2007.github.io/florencia-barrera-workspace/sites/robertlove//sitemap.xml |
-| Roar Lion's Mane | https://dipakparmar2007.github.io/florencia-barrera-workspace/sites/roarlionsmane//sitemap.xml |
-| Dr. Love Lion's Mane | https://dipakparmar2007.github.io/florencia-barrera-workspace/sites/drlovelionsmane//sitemap.xml |
-
----
-
 # Generation
 
 This index is generated automatically from the HTML files in `/sites`.
