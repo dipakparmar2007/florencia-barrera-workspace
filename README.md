@@ -12,10 +12,10 @@ This project contains public pages for the following domains:
 
 | Domain | Public URL | Page Index |
 |---|---|---|
-| **Dr. Love Official** | https://drloveofficial.com/ | [View Pages](./domains/drloveofficial.md) |
-| **Robert Love** | https://robertlove.net/ | [View Pages](./domains/robertlove.md) |
-| **Roar Lion's Mane** | https://roarlionsmane.net/ | [View Pages](./domains/roarlionsmane.md) |
-| **Dr. Love Lion's Mane** | https://drlovelionsmane.com/ | [View Pages](./domains/drlovelionsmane.md) |
+| **Dr. Love Official** | https://dipakparmar2007.github.io/florencia-barrera-workspace/sites/drloveofficial/ | [View Pages](./domains/drloveofficial.md) |
+| **Robert Love** | https://dipakparmar2007.github.io/florencia-barrera-workspace/sites/robertlove/ | [View Pages](./domains/robertlove.md) |
+| **Roar Lion's Mane** | https://dipakparmar2007.github.io/florencia-barrera-workspace/sites/roarlionsmane/ | [View Pages](./domains/roarlionsmane.md) |
+| **Dr. Love Lion's Mane** | https://dipakparmar2007.github.io/florencia-barrera-workspace/sites/drlovelionsmane/ | [View Pages](./domains/drlovelionsmane.md) |
 
 ---
 
