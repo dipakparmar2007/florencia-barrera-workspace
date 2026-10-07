@@ -32,13 +32,6 @@ jobs:
         run: |
           node scripts/generate-url-index.js
 
-      - name: Check generated files
-        run: |
-          echo "Checking generated files..."
-          ls -lah README.md
-          ls -lah domains || true
-          ls -lah brands || true
-
       - name: Commit generated index
         run: |
           git config user.name "github-actions[bot]"
