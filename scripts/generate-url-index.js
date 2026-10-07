@@ -521,22 +521,7 @@ function generateMasterReadme(domainResults, allPages) {
 
     output += `- [${brandName}](./brands/${slug}.md) - ${brandPages.length} pages\n`;
   }
-
-  output += `\n---\n\n`;
-
-  output += `# Sitemap\n\n`;
-
-  output += `Each public domain should maintain its own XML sitemap.\n\n`;
-
-  output += `| Domain | Sitemap |\n`;
-  output += `|---|---|\n`;
-
-  for (const result of domainResults) {
-    output += `| ${result.config.name} | ${result.config.domain}/sitemap.xml |\n`;
-  }
-
-  output += `\n---\n\n`;
-
+  
   output += `# Generation\n\n`;
 
   output += `This index is generated automatically from the HTML files in \`/sites\`.\n\n`;
